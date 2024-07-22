@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://dny4lw4hpc7sy"]
+
+[ext_resource type="Texture2D" uid="uid://b62iasn6bb00m" path="res://Asset/VFX/VFX_JumpUp.png" id="1_8t5ys"]
+[ext_resource type="Script" path="res://game/script/VFX_Controller.gd" id="1_nn775"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hgnx"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(0, 0, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdtbr"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(48, 0, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylrrv"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(96, 0, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h5xl"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(144, 0, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og2hv"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(192, 0, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3ix2"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(240, 0, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhrvl"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(288, 0, 48, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quc3n"]
+atlas = ExtResource("1_8t5ys")
+region = Rect2(336, 0, 48, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnxyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hgnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdtbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylrrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h5xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og2hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3ix2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhrvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quc3n")
+}],
+"loop": false,
+"name": &"Start",
+"speed": 15.0
+}]
+
+[node name="VFX_JumpUp" type="Node2D"]
+script = ExtResource("1_nn775")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -28)
+sprite_frames = SubResource("SpriteFrames_dnxyx")
+animation = &"Start"
+frame = 7
+frame_progress = 1.0

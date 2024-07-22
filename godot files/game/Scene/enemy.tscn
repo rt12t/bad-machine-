@@ -1,0 +1,133 @@
+[gd_scene load_steps=19 format=3 uid="uid://boxrbpyfp755m"]
+
+[ext_resource type="Script" path="res://game/script/Enemy.gd" id="1_olec1"]
+[ext_resource type="Texture2D" uid="uid://brbk6ol5qjyc7" path="res://Asset/Animations/Enemy/creasy moister-Sheet.png" id="2_8a0fn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xjbtr"]
+radius = 36.69
+height = 119.68
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v84g"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(0, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxrmw"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(368, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfjjh"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(736, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfqif"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(1104, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k01rl"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(1472, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wev6g"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(1840, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6naj"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(2208, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3v4v"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(2576, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6i45"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(2944, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkhv5"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(3312, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx6mj"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(3680, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xksrf"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(4048, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pekxw"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(4416, 0, 368, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga0og"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(4784, 0, 368, 445)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yyon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v84g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxrmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfjjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfqif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k01rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wev6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6naj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3v4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6i45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkhv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx6mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xksrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pekxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga0og")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_olec1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -60.635)
+shape = SubResource("CapsuleShape2D_xjbtr")
+
+[node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D"]
+position = Vector2(0, 51.355)
+scale = Vector2(1.00334, 1.00825)
+target_position = Vector2(-53.23, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -97)
+sprite_frames = SubResource("SpriteFrames_3yyon")
+animation = &"walk"
+frame = 4
+frame_progress = 0.528208
