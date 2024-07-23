@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name PlayerControl
 
-const SPEED = 200
+const SPEED = 240
 const JUMP_VELOCITY = -1000
 const GRAVITY = 2000
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -174,7 +174,7 @@ func PlayFireVFX():
 		vfxInstance.scale.x = -1
 		
 		
-func ApplyDamage(damage:int):
+#func ApplyDamage(damage:int):
 	#if currentState == PlayerState.Hurt || urrentState == PlayerState.Dead:
 		#return
 		
@@ -186,4 +186,6 @@ func ApplyDamage(damage:int):
 		#currentHealth = PlayerState.Dead
 
 
-		prints("dsa")
+		
+
+

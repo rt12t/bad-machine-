@@ -1,14 +1,13 @@
 extends CharacterBody2D
 class_name EnemyController
 
-const SPEED = 600
+const SPEED = 400
 var direction = -1
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var ray_cast_2d_forward = $CollisionShape2D/RayCast2D
 
 var currentHealth = 400
 var isDead = false 
-
 
 
 
@@ -59,6 +58,8 @@ func ApplyDamage(damage : int):
 		#await get_tree().create_timer(2).timeout
 		#queue_free()
 	
+
+
 
 
 

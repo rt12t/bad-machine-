@@ -1,8 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://boxrbpyfp755m"]
+[gd_scene load_steps=46 format=3 uid="uid://boxrbpyfp755m"]
 
 [ext_resource type="Script" path="res://game/script/Enemy.gd" id="1_olec1"]
 [ext_resource type="Texture2D" uid="uid://brbk6ol5qjyc7" path="res://Asset/Animations/Enemy/creasy moister-Sheet.png" id="2_8a0fn"]
 [ext_resource type="Texture2D" uid="uid://c54k7k54ba72" path="res://Asset/Animations/Enemy/creasy moister die.png" id="3_xdkvq"]
+[ext_resource type="Script" path="res://game/Scene/EnemyDamageCaster.gd" id="4_0thhx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xjbtr"]
 radius = 36.69
@@ -292,10 +293,14 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjo2p"]
+size = Vector2(119, 157)
+
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_olec1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
 position = Vector2(0, -43.485)
 scale = Vector2(0.72, 0.72)
 shape = SubResource("CapsuleShape2D_xjbtr")
@@ -309,3 +314,15 @@ target_position = Vector2(-67.21, 0)
 position = Vector2(-6, -97)
 sprite_frames = SubResource("SpriteFrames_3yyon")
 animation = &"Attack"
+
+[node name="Area2D_DamageCaster" type="Area2D" parent="."]
+script = ExtResource("4_0thhx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_DamageCaster"]
+light_mask = 31
+visibility_layer = 31
+position = Vector2(4.5, -68.5)
+shape = SubResource("RectangleShape2D_cjo2p")
+
+[connection signal="body_entered" from="Area2D_DamageCaster" to="." method="_on_area_2d_damage_caster_body_entered"]
+[connection signal="body_entered" from="Area2D_DamageCaster" to="Area2D_DamageCaster" method="_on_body_entered"]
