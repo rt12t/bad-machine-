@@ -16,7 +16,7 @@ func _physics_process(delta):
 	
 
 func _on_body_entered(body):
-	print("dsad")
+	
 	
 	var vfxToSpawn = preload("res://game/Scene/vfX_bullet_hit.tscn")
 	var vfxInstance = vfxToSpawn.instantiate() 	
@@ -27,6 +27,8 @@ func _on_body_entered(body):
 		vfxInstance.scale.x = -1
 	
 		
-	
+	var enemy = body as EnemyController
+	if enemy:
+		enemy.ApplyDamage(DAMAGE)
 	
 	queue_free()

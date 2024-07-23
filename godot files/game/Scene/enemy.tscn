@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://boxrbpyfp755m"]
+[gd_scene load_steps=23 format=3 uid="uid://boxrbpyfp755m"]
 
 [ext_resource type="Script" path="res://game/script/Enemy.gd" id="1_olec1"]
 [ext_resource type="Texture2D" uid="uid://brbk6ol5qjyc7" path="res://Asset/Animations/Enemy/creasy moister-Sheet.png" id="2_8a0fn"]
@@ -6,6 +6,18 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xjbtr"]
 radius = 36.69
 height = 119.68
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3xqc"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(0, 0, 1717, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l064a"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(1717, 0, 1717, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqloa"]
+atlas = ExtResource("2_8a0fn")
+region = Rect2(3434, 0, 1717, 445)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7v84g"]
 atlas = ExtResource("2_8a0fn")
@@ -67,6 +79,20 @@ region = Rect2(4784, 0, 368, 445)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_j3xqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l064a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqloa")
+}],
+"loop": true,
+"name": &"die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7v84g")
 }, {
 "duration": 1.0,
@@ -113,6 +139,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wracc"]
+size = Vector2(123, 85)
+
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_olec1")
 
@@ -128,6 +157,14 @@ target_position = Vector2(-53.23, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -97)
 sprite_frames = SubResource("SpriteFrames_3yyon")
-animation = &"walk"
-frame = 4
-frame_progress = 0.528208
+animation = &"die"
+
+[node name="Area2D_PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_PlayerDetector"]
+position = Vector2(-3.5, -65.5)
+shape = SubResource("RectangleShape2D_wracc")
+
+[connection signal="body_entered" from="Area2D_PlayerDetector" to="." method="_on_area_2d_player_detector_body_entered"]
