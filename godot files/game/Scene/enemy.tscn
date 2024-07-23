@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://boxrbpyfp755m"]
+[gd_scene load_steps=44 format=3 uid="uid://boxrbpyfp755m"]
 
 [ext_resource type="Script" path="res://game/script/Enemy.gd" id="1_olec1"]
 [ext_resource type="Texture2D" uid="uid://brbk6ol5qjyc7" path="res://Asset/Animations/Enemy/creasy moister-Sheet.png" id="2_8a0fn"]
@@ -292,12 +292,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_it3si"]
-size = Vector2(10.3913, 18.0819)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rb13f"]
-radius = 53.1507
-
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_olec1")
 
@@ -314,26 +308,4 @@ target_position = Vector2(-67.21, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-6, -97)
 sprite_frames = SubResource("SpriteFrames_3yyon")
-animation = &"Die"
-
-[node name="Area2D_PlayeerDetector" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_PlayeerDetector"]
-light_mask = 0
-visibility_layer = 2
-position = Vector2(1.5, -75)
-scale = Vector2(7.795, 8.185)
-shape = SubResource("RectangleShape2D_it3si")
-
-[node name="Area2D_DamagCaster" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_DamagCaster"]
-position = Vector2(-1, -77)
-shape = SubResource("CircleShape2D_rb13f")
-
-[connection signal="body_entered" from="Area2D_PlayeerDetector" to="." method="_on_area_2d_playeer_detector_body_entered"]
-[connection signal="body_entered" from="Area2D_DamagCaster" to="Area2D_DamagCaster" method="_on_body_entered"]
+animation = &"Attack"

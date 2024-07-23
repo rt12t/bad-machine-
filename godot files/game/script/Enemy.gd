@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name EnemyController
 
-const SPEED = 500
+const SPEED = 400
 var direction = -1
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var ray_cast_2d_forward = $CollisionShape2D/RayCast2D
@@ -9,7 +9,6 @@ var direction = -1
 var currentHealth = 200
 var isDead = false 
 
-var isAttacking = false 
 
 
 
@@ -23,11 +22,7 @@ func _physics_process(_delta):
 	if isDead:
 		return
 	
-	if isAttacking:
-		if animated_sprite_2d.is_playing() == false:
-			isAttacking = false
-		else:
-			return	
+
 	
 		
 	if ray_cast_2d_forward.is_colliding():
@@ -46,10 +41,8 @@ func UpdateAnimation():
 	if velocity.x != 0:
 		animated_sprite_2d.flip_h = velocity.x > 0
 	
-	if isAttacking == false:
 		animated_sprite_2d.play("walk")	
-	elif animated_sprite_2d.animation != "Attack":
-		animated_sprite_2d.play("Attack")  
+	
 	
 		
 		
@@ -68,5 +61,4 @@ func ApplyDamage(damage : int):
 	
 
 
-func _on_area_2d_playeer_detector_body_entered(body):
-	isAttacking = true
+
