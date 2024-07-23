@@ -1,7 +1,7 @@
 extends CharacterBody2D
+class_name PlayerControl
 
-
-const SPEED = 400
+const SPEED = 200
 const JUMP_VELOCITY = -1000
 const GRAVITY = 2000
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -13,7 +13,27 @@ var isShooting = false
 const SHOOT_DURATION = 0.8
 
 
+enum PlayerState {Normal,Hurt,Dead}
+
+var currenState : PlayerState = PlayerState.Normal:
+	set(new_value):
+		currenState = new_value
+		match currenState:
+			PlayerState.Hurt:
+				if is_on_floor():
+					animated_sprite_2d.play("Hit_Stand")
+				else:
+					animated_sprite_2d.play("Hit_Jump") 	
+			PlayerState.Dead:	
+				animated_sprite_2d.play("Die")
+				set_collision_layer_value(2,false)
+				
+var currentHealth
+const MAX_HEALTH = 100
+
+				
 func _ready(): 
+	currentHealth = MAX_HEALTH
 	GameManager.player = self 
 	GameManager.PlayerOriginalPos = position
 
@@ -29,6 +49,14 @@ func _physics_process(delta):
 	elif  AirbornLastFrame:
 		PlaylandVFX()
 		AirbornLastFrame = false	
+	
+	
+	if currenState == PlayerState.Hurt || currenState == PlayerState.Dead:
+		velocity.x=0
+		move_and_slide()
+		return
+	
+	
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += JUMP_VELOCITY
@@ -53,6 +81,18 @@ func _physics_process(delta):
 	
 	
 func UpdateAnimation():
+	
+	
+	if currenState == PlayerState.Dead:
+		return
+	elif currenState == PlayerState.Hurt:
+		if animated_sprite_2d.is_playing():
+			return
+		else:
+			currenState = PlayerState.Normal		
+	
+	
+	
 	if velocity.x != 0:
 		animated_sprite_2d.flip_h = velocity.x < 0
 		if velocity.x < 0:
@@ -133,6 +173,17 @@ func PlayFireVFX():
 	if animated_sprite_2d.flip_h:
 		vfxInstance.scale.x = -1
 		
+		
+func ApplyDamage(damage:int):
+	#if currentState == PlayerState.Hurt || urrentState == PlayerState.Dead:
+		#return
+		
+	#currentState -= damage	
+	#currentState = PlayerState.Hurt
+
+	#if currentHealth <= 0:
+		#currentHealth = 0
+		#currentHealth = PlayerState.Dead
 
 
-
+		prints("dsa")
