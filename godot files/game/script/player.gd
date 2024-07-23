@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name PlayerController
 
 const SPEED = 300
 const JUMP_VELOCITY = -1000
@@ -122,6 +122,7 @@ func TryToShoot():
 	isShooting = false
 		
 	
+	 
 	
-	
-	
+func ApplyDamage(damage:int):
+	print("cdss")	
