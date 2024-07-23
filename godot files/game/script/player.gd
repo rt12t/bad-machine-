@@ -1,7 +1,7 @@
 extends CharacterBody2D
+class_name PlayerController
 
-
-const SPEED = 300
+const SPEED = 400
 const JUMP_VELOCITY = -1000
 const GRAVITY = 2000
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -85,8 +85,8 @@ func UpdateAnimation():
 	else:
 		animated_sprite_2d	.play("jump")
 		 
-		if isShooting:
-			animated_sprite_2d.play("Shoot_jump")	
+		#if isShooting:
+			#animated_sprite_2d.play("Shoot_jump")	
 			
 			
 func PlayerJumpUpVFX():
@@ -117,7 +117,8 @@ func TryToShoot():
 		return
 		
 	isShooting = true
-	Shoot()		
+	Shoot()
+	PlayFireVFX()		
 	await get_tree().create_timer(SHOOT_DURATION).timeout
 	isShooting = false
 		
@@ -125,3 +126,14 @@ func TryToShoot():
 	
 	
 	
+func PlayFireVFX():
+	var vfxToSpawn = preload("res://game/Scene/vfX_player_fire.tscn")
+	var vfxInstance = GameManager.SpawnVFX(vfxToSpawn,shooting_point.global_position)
+	
+	if animated_sprite_2d.flip_h:
+		vfxInstance.scale.x = -1
+		
+func ApplyDamage(damage:int):
+	print("The player is damaged")		
+
+

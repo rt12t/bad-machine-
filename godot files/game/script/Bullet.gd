@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var bullrt_sprite_2d = $Bullrt_Sprite2D
 
-const SPEED = 500
+const SPEED = 800
 var direction = 1
 const DAMAGE = 35
  
@@ -16,7 +16,6 @@ func _physics_process(delta):
 	
 
 func _on_body_entered(body):
-	print("dsad")
 	
 	var vfxToSpawn = preload("res://game/Scene/vfX_bullet_hit.tscn")
 	var vfxInstance = vfxToSpawn.instantiate() 	
@@ -25,8 +24,10 @@ func _on_body_entered(body):
 	
 	if direction == -1:
 		vfxInstance.scale.x = -1
+
+	var enemy = body as EnemyController
+	if enemy:
+		enemy.ApplyDamage(DAMAGE)
 	
-		
-	
-	
+
 	queue_free()
