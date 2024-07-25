@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const  RUN_SPEED := 300
 const  ACCELERATION := RUN_SPEED / 0.7
-const JUMP_VELOCITY := -800
+const JUMP_VELOCITY := -600
 
 var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 @onready var sprite_2d = $Sprite2D
@@ -28,8 +28,11 @@ func _physics_process(delta: float) -> void:
 			animation_player.play("idle")
 		else:
 			animation_player.play("running")
-	else:
+	elif velocity.y < 0:
 		animation_player.play("jump")
+	else:
+		animation_player.play("full")
+	
 		
 	if not is_zero_approx(direction):	
 		sprite_2d.flip_h = direction < 0
