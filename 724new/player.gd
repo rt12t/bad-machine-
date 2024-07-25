@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
-const  RUN_SPEED := 300
-const  ACCELERATION := RUN_SPEED / 0.7
-const JUMP_VELOCITY := -600
+const  RUN_SPEED := 400
+const  ACCELERATION := RUN_SPEED / 0.8
+const JUMP_VELOCITY := -1100
+const gravity = 2000
 
-var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
+
+#var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var jump_request_timer = $JumpRequestTimer
