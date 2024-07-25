@@ -33,5 +33,5 @@ func _physics_process(delta: float) -> void:
 		
 	if not is_zero_approx(direction):	
 		sprite_2d.flip_h = direction < 0
-	var was_on_floor := is_on_floor()	
+	#var was_on_floor := is_on_floor()	
 	move_and_slide()
