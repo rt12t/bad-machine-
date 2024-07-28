@@ -10,6 +10,7 @@ const gravity = 2000
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var jump_request_timer = $JumpRequestTimer
+@onready var coyote_timer: Timer = $"Coyote Timer"
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
@@ -22,8 +23,12 @@ func _physics_process(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, direction * RUN_SPEED, ACCELERATION * delta)
 	velocity.y += gravity * delta
 	
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	var can_jump := is_on_floor() or coyote_timer.time_left > 0
+	var should_jump := can_jump and Input.is_action_just_pressed("jump")
+	if should_jump:
 		velocity.y = JUMP_VELOCITY
+		coyote_timer.stop()
+		jump_request_timer.stop()
 		
 	if is_on_floor():	
 		if is_zero_approx(direction) and is_zero_approx(velocity.x):
@@ -38,5 +43,12 @@ func _physics_process(delta: float) -> void:
 		
 	if not is_zero_approx(direction):	
 		sprite_2d.flip_h = direction < 0
-	#var was_on_floor := is_on_floor()	
+	
+	var was_on_floor := is_on_floor()	
 	move_and_slide()
+	
+	if is_on_floor() != was_on_floor:
+		if was_on_floor and not should_jump:
+			coyote_timer.start()
+		else:
+			coyote_timer.stop()	

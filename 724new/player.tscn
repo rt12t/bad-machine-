@@ -282,7 +282,12 @@ libraries = {
 }
 
 [node name="JumpRequestTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 0.3
+one_shot = true
+
+[node name="Coyote Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_81f10")
