@@ -282,7 +282,7 @@ libraries = {
 }
 
 [node name="JumpRequestTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.2
 one_shot = true
 
 [node name="Coyote Timer" type="Timer" parent="."]

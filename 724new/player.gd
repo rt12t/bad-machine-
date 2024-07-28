@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 const  RUN_SPEED := 400
-const  ACCELERATION := RUN_SPEED / 0.8
+const  FLLOR_ACCELERATION := RUN_SPEED / 0.8
+const  AIR_ACCELERATION := RUN_SPEED /0.1
 const JUMP_VELOCITY := -1100
 const gravity = 2000
 
@@ -20,11 +21,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left","move_right")
-	velocity.x = move_toward(velocity.x, direction * RUN_SPEED, ACCELERATION * delta)
+	var acceleration := FLLOR_ACCELERATION if is_on_floor() else AIR_ACCELERATION
+	velocity.x = move_toward(velocity.x, direction * RUN_SPEED, acceleration * delta)
 	velocity.y += gravity * delta
 	
 	var can_jump := is_on_floor() or coyote_timer.time_left > 0
-	var should_jump := can_jump and Input.is_action_just_pressed("jump")
+	var should_jump = can_jump and jump_request_timer.time_left > 0#Input.is_action_just_pressed("jump")
 	if should_jump:
 		velocity.y = JUMP_VELOCITY
 		coyote_timer.stop()
