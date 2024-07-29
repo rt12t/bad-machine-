@@ -30,7 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("jump"):
 		jump_request_timer.stop()
 		if velocity.y < JUMP_VELOCITY / 2:
-			velocity.y = JUMP_VELOCITY / 3
+			velocity.y = JUMP_VELOCITY / 2
 
 func tick_physics(state: State, delta: float) -> void:
 	
