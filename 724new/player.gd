@@ -6,6 +6,7 @@ enum State {
 	JUMP,
 	FALL,
 	LANDING,
+	WALL_SLIDING,
 	
 }
 
@@ -19,10 +20,13 @@ const default_gravity = 2000
 
 #var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 var is_first_tick := false
-@onready var sprite_2d = $Sprite2D
+
+@onready var graphics: Node2D = $Graphics
 @onready var animation_player = $AnimationPlayer
 @onready var jump_request_timer = $JumpRequestTimer
 @onready var coyote_timer: Timer = $"Coyote Timer"
+@onready var hand_cheker: RayCast2D = $Graphics/HandCheker
+@onready var foot_cheker: RayCast2D = $Graphics/FootCheker
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
@@ -50,6 +54,9 @@ func tick_physics(state: State, delta: float) -> void:
 		State.FALL:
 			move(default_gravity,delta)	
 			
+		State.WALL_SLIDING:
+			move(default_gravity / 30 ,delta)
+			#graphics.scale.x = get_wall_normal().x
 	is_first_tick = false				
 		
 	
@@ -66,8 +73,7 @@ func move(gravity: float, delta: float)	-> void:
 	
 		
 	if not is_zero_approx(direction):	
-		sprite_2d.flip_h = direction < 0
-	
+		graphics.scale.x = -1 if direction < 0 else 1
 		
 	move_and_slide()
 	
@@ -99,10 +105,21 @@ func get_next_state(state:State) ->	 State:
 		State.FALL:
 			if is_on_floor():
 				return State.LANDING
+			if is_on_wall() and hand_cheker.is_colliding() and foot_cheker.is_colliding():
+				return State.WALL_SLIDING
+					
 				
 		State.LANDING:
 			if not animation_player.is_playing():
 				return State.IDLE
+		
+		State.WALL_SLIDING:
+			if is_on_floor():
+				return State.IDLE
+			if not is_on_wall():
+				return State.FALL
+							
+
 
 	return state			
 	
@@ -129,7 +146,9 @@ func transition_state(from: State, to: State) -> void:
 				coyote_timer.start()
 		
 		State.LANDING:
-			animation_player.play("landing")		
-				
+			animation_player.play("landing")
+					
+		State.WALL_SLIDING:
+			animation_player.play("wall_sliding")		
 				
 	is_first_tick = true
