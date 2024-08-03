@@ -7,6 +7,7 @@ enum State {
 	FALL,
 	LANDING,
 	WALL_SLIDING,
+	WALL_JUMP,
 	
 }
 
@@ -16,6 +17,7 @@ const  FLLOR_ACCELERATION := RUN_SPEED / 0.8
 const  AIR_ACCELERATION := RUN_SPEED /0.1
 const JUMP_VELOCITY := -1150
 const default_gravity = 2000
+const WALL_JUMP_VELOCITY := Vector2(1000,-800)
 
 
 #var gravity := ProjectSettings.get("physics/2d/default_gravity") as float
@@ -55,8 +57,12 @@ func tick_physics(state: State, delta: float) -> void:
 			move(default_gravity,delta)	
 			
 		State.WALL_SLIDING:
-			move(default_gravity / 30 ,delta)
+			move(default_gravity / 400 ,delta)
 			#graphics.scale.x = get_wall_normal().x
+		
+		State.WALL_JUMP:
+			move(default_gravity,delta)	
+			
 	is_first_tick = false				
 		
 	
@@ -114,11 +120,16 @@ func get_next_state(state:State) ->	 State:
 				return State.IDLE
 		
 		State.WALL_SLIDING:
+			if jump_request_timer.time_left > 0:
+				return State.WALL_JUMP
 			if is_on_floor():
 				return State.IDLE
 			if not is_on_wall():
 				return State.FALL
-							
+		
+		State.WALL_JUMP:
+			if velocity.y >= 0:
+				return State.FALL					
 
 
 	return state			
@@ -149,6 +160,12 @@ func transition_state(from: State, to: State) -> void:
 			animation_player.play("landing")
 					
 		State.WALL_SLIDING:
-			animation_player.play("wall_sliding")		
+			animation_player.play("wall_sliding")	
+		
+		State.WALL_JUMP:
+			animation_player.play("jump")
+			velocity = WALL_JUMP_VELOCITY
+			velocity.x = get_floor_normal().x
+			jump_request_timer.stop()		
 				
 	is_first_tick = true
