@@ -1,0 +1,44 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1722652407
+icon.svg::CompressedTexture2D::3527994882256319338::1721806270::1721806275::1::::<><>::
+player.gd::GDScript::-1::1722583140::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::3856458238613720420::1722612134::0::1::::<><>::res://player.gd<>uid://cagnmcyomkg5b::::res://Asset/Animations/Player/all.png<>res://classes/StateMachine.gd
+world.tscn::PackedScene::566538204313485991::1722612084::0::1::::<><>::uid://kt0i3qc26hml::::res://Asset/Tilemap/Tilemap4.png<>uid://bu7dkle05q60w::::res://player.tscn
+::res://Asset/::1721817834
+::res://Asset/Animations/::1721806620
+::res://Asset/Animations/Enemy/::1722572813
+creasy moister die.png::CompressedTexture2D::204089368224240115::1721722766::1721806625::1::::<><>::
+creasy moister-Sheet.png::CompressedTexture2D::3582358686537004044::1721659123::1721806625::1::::<><>::
+::res://Asset/Animations/Other/::1721806625
+Coin.png::CompressedTexture2D::4983910816205043109::1721659123::1721806625::1::::<><>::
+Door.png::CompressedTexture2D::8089339560573809168::1721659123::1721806625::1::::<><>::
+::res://Asset/Animations/Player/::1722611499
+all.png::CompressedTexture2D::4786038527117922789::1722610719::1722611499::1::::<><>::
+clould walk.png::CompressedTexture2D::5360768497878022621::1721659123::1721806625::1::::<><>::
+hurt.png::CompressedTexture2D::786389787293330170::1721829207::1721830193::1::::<><>::
+idle.png::CompressedTexture2D::4893592234651192897::1721829076::1721830193::1::::<><>::
+realyture jump.png::CompressedTexture2D::914086956046509337::1721659123::1721806625::1::::<><>::
+shoot.png::CompressedTexture2D::2566944222480271076::1721659123::1721807101::1::::<><>::
+slid.png::CompressedTexture2D::8092360386579929789::1721829163::1721830194::1::::<><>::
+::res://Asset/Background/::1721806789
+could-Sheet.png::CompressedTexture2D::8229805739924036147::1721659123::1721806626::1::::<><>::
+se.png::CompressedTexture2D::6704115904781710344::1721659123::1721806624::1::::<><>::
+蜗牛-Sheet2.png::CompressedTexture2D::9047340534805009838::1721659123::1721806625::1::::<><>::
+::res://Asset/Background/CloseBackground/::1721806624
+CBG01_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::4018142891989164422::1721659123::1721806624::1::::<><>::
+CBG02_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::5630215602337966973::1721659123::1721806624::1::::<><>::
+CBG03_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::7251131959583925381::1721659123::1721806624::1::::<><>::
+CBG04_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::3946741347990419645::1721659123::1721806624::1::::<><>::
+CBG05_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::3909253595145565036::1721659123::1721806624::1::::<><>::
+::res://Asset/script/::1721832189
+::res://Asset/Tilemap/::1721806624
+Tilemap4.png::CompressedTexture2D::742645320376713895::1721659123::1721806624::1::::<><>::
+Tilemap_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::6921258935788060882::1721659123::1721806624::1::::<><>::
+::res://Asset/VFX/::1721806662
+blame-Sheet.png::CompressedTexture2D::6645468420157104907::1721721893::1721806624::1::::<><>::
+boom-Sheet.png::CompressedTexture2D::5908067636437164782::1721722098::1721806625::1::::<><>::
+VFX_JumpUp.png::CompressedTexture2D::4618499738686514170::1721659123::1721806625::1::::<><>::
+VFX_Land.png::CompressedTexture2D::2985443538454777689::1721659123::1721806625::1::::<><>::
+::res://classes/::1722185332
+StateMachine.gd::GDScript::-1::1722185332::0::1::::StateMachine<>Node<>::
+::res://enemies/::1722572813

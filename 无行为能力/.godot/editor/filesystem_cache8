@@ -1,0 +1,79 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1721803658
+icon.svg::CompressedTexture2D::6252762943982838458::1721659123::1721659139::1::::<><>::
+::res://Asset/::1721722941
+::res://Asset/Animations/::1721722940
+::res://Asset/Animations/Enemy/::1721748689
+Attack.png::CompressedTexture2D::7967370099149208884::1721659123::1721659139::1::::<><>::
+creasy moister-Sheet.png::CompressedTexture2D::3582358686537004044::1721659123::1721659139::1::::<><>::
+Die.png::CompressedTexture2D::1756731675255329282::1721659123::1721659139::1::::<><>::
+Walk.png::CompressedTexture2D::5036982362563324769::1721659123::1721659139::1::::<><>::
+::res://Asset/Animations/Other/::1721722940
+Bullet.png::CompressedTexture2D::5472423842458437276::1721659123::1721659139::1::::<><>::
+Coin.png::CompressedTexture2D::4983910816205043109::1721659123::1721659139::1::::<><>::
+Door.png::CompressedTexture2D::8089339560573809168::1721659123::1721659139::1::::<><>::
+::res://Asset/Animations/Player/::1721748711
+attck.png::CompressedTexture2D::1738599291466064131::1721659123::1721659139::1::::<><>::
+clould walk.png::CompressedTexture2D::5360768497878022621::1721659123::1721659139::1::::<><>::
+Die.png::CompressedTexture2D::3740710493418986224::1721659123::1721659139::1::::<><>::
+Hit_Jump.png::CompressedTexture2D::7152783736011192371::1721659123::1721659139::1::::<><>::
+Hit_Stand.png::CompressedTexture2D::5580080650482979346::1721659123::1721659139::1::::<><>::
+IDD.png::CompressedTexture2D::839005991839327011::1721659123::1721659139::1::::<><>::
+idde.png::CompressedTexture2D::8342247596142267927::1721659123::1721659139::1::::<><>::
+Idle.png::CompressedTexture2D::20656869044925732::1721659123::1721659139::1::::<><>::
+jump ture.png::CompressedTexture2D::8152962344475639039::1721659123::1721659139::1::::<><>::
+Jump.png::CompressedTexture2D::6650121483498756339::1721659123::1721659139::1::::<><>::
+machine idle-Sheet.png::CompressedTexture2D::5270089285671268642::1721659123::1721659139::1::::<><>::
+machine-Sheet.png::CompressedTexture2D::5836195172534540877::1721748689::1721748711::1::::<><>::
+realyture jump.png::CompressedTexture2D::914086956046509337::1721659123::1721659139::1::::<><>::
+run1.png::CompressedTexture2D::803403935553908304::1721659123::1721659139::1::::<><>::
+Run.png::CompressedTexture2D::5686788079155191349::1721659123::1721659139::1::::<><>::
+shoot.png::CompressedTexture2D::3825510089791781860::1721659123::1721659139::1::::<><>::
+Shoot_Jump.png::CompressedTexture2D::6695658312451678218::1721659123::1721659139::1::::<><>::
+Shoot_Run.png::CompressedTexture2D::3066084429799792272::1721659123::1721659139::1::::<><>::
+Shoot_Stand.png::CompressedTexture2D::9069088837247104701::1721659123::1721659139::1::::<><>::
+walk.png::CompressedTexture2D::6821882500322857317::1721659123::1721659139::1::::<><>::
+::res://Asset/Background/::1721722940
+00_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::2335525731283675331::1721659123::1721659139::1::::<><>::
+01_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::5610145150590274592::1721659123::1721659139::1::::<><>::
+02_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::2102978685448314868::1721659123::1721659139::1::::<><>::
+03_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::845917877522488739::1721659123::1721659139::1::::<><>::
+04_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::4720750897152993320::1721659123::1721659139::1::::<><>::
+05_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::8317533732608197823::1721659123::1721659139::1::::<><>::
+could-Sheet.png::CompressedTexture2D::8229805739924036147::1721659123::1721659140::1::::<><>::
+Particles_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::3315203978086727558::1721659123::1721659139::1::::<><>::
+se.png::CompressedTexture2D::6704115904781710344::1721659123::1721659139::1::::<><>::
+Sunshine_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::2515877165641268416::1721659123::1721659139::1::::<><>::
+蜗牛-Sheet2.png::CompressedTexture2D::9047340534805009838::1721659123::1721659139::1::::<><>::
+蜗牛-Sheet.png::CompressedTexture2D::5628136844881528054::1721659123::1721659139::1::::<><>::
+::res://Asset/Background/CloseBackground/::1721722941
+CBG01_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::4018142891989164422::1721659123::1721659139::1::::<><>::
+CBG02_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::5630215602337966973::1721659123::1721659139::1::::<><>::
+CBG03_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::7251131959583925381::1721659123::1721659139::1::::<><>::
+CBG04_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::3946741347990419645::1721659123::1721659139::1::::<><>::
+CBG05_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::3909253595145565036::1721659123::1721659139::1::::<><>::
+::res://Asset/Tilemap/::1721722941
+Tilemap4.png::CompressedTexture2D::742645320376713895::1721659123::1721659138::1::::<><>::
+Tilemap_ProjectLittleAdventurerAndie2D.png::CompressedTexture2D::6921258935788060882::1721659123::1721659139::1::::<><>::
+::res://Asset/VFX/::1721748689
+VFX_JumpUp.png::CompressedTexture2D::4618499738686514170::1721659123::1721659139::1::::<><>::
+VFX_Land.png::CompressedTexture2D::2985443538454777689::1721659123::1721659139::1::::<><>::
+VFX_PlayerBulletHit.png::CompressedTexture2D::6925466427552981108::1721659123::1721659139::1::::<><>::
+VFX_PlayerFire.png::CompressedTexture2D::2671723007045133773::1721659123::1721659139::1::::<><>::
+::res://game/::1721788351
+main.tscn::PackedScene::5625027143317946302::1721788351::0::1::::<><>::uid://c5uyegyvgc0vu::::res://Asset/Tilemap/Tilemap_ProjectLittleAdventurerAndie2D.png<>uid://kt0i3qc26hml::::res://Asset/Tilemap/Tilemap4.png<>res://game/script/player.gd<>uid://chc4uoivcgeqc::::res://Asset/Animations/Player/machine idle-Sheet.png<>uid://cpfdjt1mwxmw0::::res://Asset/Animations/Player/machine-Sheet.png<>uid://dq4bumswwe2kx::::res://Asset/Animations/Player/idde.png<>uid://btka7qlgn7s7y::::res://Asset/Animations/Player/Die.png<>uid://na144xeuug78::::res://Asset/Animations/Player/realyture jump.png<>res://game/player reset area.gd<>uid://cdaijveoi3i4l::::res://Asset/Animations/Other/Coin.png<>uid://dqrcthtjf8bwx::::res://Asset/Background/05_ProjectLittleAdventurerAndie2D.png<>uid://c2rr2r0lpgtho::::res://Asset/Background/se.png<>uid://cim2crqhk3eg8::::res://Asset/Animations/Player/clould walk.png<>uid://b8i1cvwv60d3m::::res://Asset/Background/04_ProjectLittleAdventurerAndie2D.png<>uid://dnisigij4jhuu::::res://Asset/Animations/Other/Door.png<>uid://burduewm3wmyu::::res://Asset/Animations/Player/shoot.png<>uid://mb1e5j8p87rj::::res://Asset/Background/03_ProjectLittleAdventurerAndie2D.png<>uid://dpitx0b72u5fb::::res://Asset/Background/could-Sheet.png<>uid://d15um2s1k7g27::::res://Asset/Background/蜗牛-Sheet2.png<>uid://bnh56pqs6jaxa::::res://Asset/Background/Particles_ProjectLittleAdventurerAndie2D.png<>uid://boxrbpyfp755m::::res://game/Scene/enemy.tscn<>uid://djtib5wckucfo::::res://game/Scene/bullet.tscn
+player reset area.gd::GDScript::-1::1721659123::0::1::::<>Area2D<>::
+::res://game/Scene/::1721787679
+bullet.tscn::PackedScene::7830673952675991232::1721746815::0::1::::<><>::res://game/script/Bullet.gd<>uid://cj75ayppcjihg::::res://Asset/Animations/Other/Bullet.png
+enemy.tscn::PackedScene::3417579982813937808::1721787679::0::1::::<><>::res://game/script/Enemy.gd<>uid://47x0s73f76x1::::res://Asset/Background/02_ProjectLittleAdventurerAndie2D.png<>uid://brbk6ol5qjyc7::::res://Asset/Animations/Enemy/creasy moister-Sheet.png<>res://game/script/EnemyDamageCaster.gd
+player reset area.gd::GDScript::-1::1721659123::0::1::::<>Area2D<>::
+vfX_bullet_hit.tscn::PackedScene::6151237849194259742::1721748689::0::1::::<><>::res://game/script/VFX_Controller.gd<>uid://c5w0oj2b27pe7::::res://Asset/VFX/VFX_PlayerBulletHit.png
+vfX_jump_up.tscn::PackedScene::8123043721645580572::1721746815::0::1::::<><>::uid://b62iasn6bb00m::::res://Asset/VFX/VFX_JumpUp.png<>res://game/script/VFX_Controller.gd
+vfX_land.tscn::PackedScene::518830389875617703::1721722256::0::1::::<><>::res://game/script/VFX_Controller.gd<>uid://bisf23wbadtrt::::res://Asset/VFX/VFX_Land.png
+::res://game/script/::1721787678
+Bullet.gd::GDScript::-1::1721784979::0::1::::<>Area2D<>::
+Enemy.gd::GDScript::-1::1721785762::0::1::::EnemyController<>CharacterBody2D<>::
+EnemyDamageCaster.gd::GDScript::-1::1721785762::0::1::::<>Area2D<>::
+gamemanager.gd::GDScript::-1::1721659123::0::1::::<>Node<>::
+player.gd::GDScript::-1::1721787678::0::1::::PlayerController<>CharacterBody2D<>::
+VFX_Controller.gd::GDScript::-1::1721659123::0::1::::<>Node2D<>::
